@@ -1,0 +1,53 @@
+name: $(Major).$(Minor).$(Patch).$(rev:r)
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: echo Build Number $(Build.BuildNumber)
+- script: echo Started restoring the source code
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'restore'
+    projects: |
+      **/*.csproj
+    feedsToUse: 'select'
+- script: echo Started building the source code
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: |
+      **/*.csproj
+    arguments: '--configuration $(BuildConfiguration)'
+- script: echo Started publishing
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'publish'
+    publishWebProjects: false
+    projects: |
+      **/*.csproj
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+- script: echo Started dropping
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
+
+- script: echo Started packing and pushing 
+- task: NuGetCommand@2
+  inputs:
+    command: 'pack'
+    packagesToPack: '**/*.csproj'
+    includesymbols: false
+    versioningScheme: byEnvVar
+    versionEnvVar: 'Build.BuildNumber'
+- task: NuGetCommand@2
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'Simcoe AI'
