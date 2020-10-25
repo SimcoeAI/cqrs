@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<package >
+  <metadata>
+    <id>SimcoeAI.Abstraction.CQRS</id>
+    <title>SimcoeAI CQRS base classes' definitions</title>
+    <version>1.0</version>
+    <authors>Arash Sabet and Milad Ghafoori</authors>
+    <owners>Simcoe AI Inc.</owners>
+    <licenseUrl>https://github.com/SimcoeAI/cqrs/blob/main/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/SimcoeAI/cqrs</projectUrl>
+    <iconUrl>https://simcoe.ai/wp-content/uploads/2020/04/Logo_web_rectangular_non_retina.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>This package contains a few C# classes and interfaces to define the concept of CQRS pattern.</description>
+    <copyright>2020 - All rights reserved, Simcoe AI Inc</copyright>
+    <tags>cqrs cqrs-pattern</tags>
+  </metadata>
+</package>
