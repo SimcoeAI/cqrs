@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <package >
   <metadata>
-    <id>SimcoeAI.Abstraction.CQRS</id>
+    <id>SimcoeAI.Abstractions.CQRS</id>
     <title>SimcoeAI CQRS base classes' definitions</title>
     <version>1.0</version>
     <authors>Arash Sabet and Milad Ghafoori</authors>
