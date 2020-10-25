@@ -8,7 +8,7 @@
     <owners>Simcoe AI Inc.</owners>
     <licenseUrl>https://github.com/SimcoeAI/cqrs/blob/main/LICENSE</licenseUrl>
     <projectUrl>https://github.com/SimcoeAI/cqrs</projectUrl>
-    <iconUrl>https://simcoe.ai/wp-content/uploads/2020/04/Logo_web_rectangular_non_retina.png</iconUrl>
+    <iconUrl>https://avatars0.githubusercontent.com/u/61719010?s=200&v=4</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>This package contains a few C# classes and interfaces to define the concept of CQRS pattern.</description>
     <copyright>2020 - All rights reserved, Simcoe AI Inc</copyright>
